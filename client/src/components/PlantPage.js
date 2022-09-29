@@ -16,14 +16,16 @@ function PlantPage() {
       });
   }, []);
 
+
   function handleAddPlant(newPlant) {
     const updatedPlantsArray = [...plants, newPlant];
     setPlants(updatedPlantsArray);
   }
 
-  const displayedPlants = plants.filter((plant) => {
-    return plant.name.toLowerCase().includes(searchTerm.toLowerCase());
-  });
+  const displayedPlants = plants.filter(function (plant) {
+    return(plant.name.toLocaleLowerCase().includes(plants.search.toLocaleLowerCase()))
+
+  })
 
   return (
     <main>
@@ -35,3 +37,4 @@ function PlantPage() {
 }
 
 export default PlantPage;
+
